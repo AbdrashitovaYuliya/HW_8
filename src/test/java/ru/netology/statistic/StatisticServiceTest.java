@@ -81,6 +81,7 @@ public class StatisticServiceTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     void numberRadioStationDegreesMax() {
         Radio radio = new Radio();
@@ -94,7 +95,6 @@ public class StatisticServiceTest {
         Assertions.assertEquals(expected, actual);
 
     }
-
 
 
     @Test
@@ -151,6 +151,7 @@ public class StatisticServiceTest {
         Assertions.assertEquals(expected, actual);
 
     }
+
     @Test
     void switchSoundVolumeDegrees0() {
         Radio radio = new Radio();
@@ -162,6 +163,7 @@ public class StatisticServiceTest {
         Assertions.assertEquals(expected, actual);
 
     }
+
     @Test
     void switchSoundVolume11() {
         Radio radio = new Radio();
@@ -190,7 +192,7 @@ public class StatisticServiceTest {
 
 
     @Test
-            void maxVolume() {
+    void maxVolume() {
         Radio radio = new Radio();
         radio.setCurrentVolume(10);
 
@@ -216,6 +218,7 @@ public class StatisticServiceTest {
         Assertions.assertEquals(expected, actual);
 
     }
+
     @Test
     void Volume8() {
         Radio radio = new Radio();
@@ -229,6 +232,7 @@ public class StatisticServiceTest {
         Assertions.assertEquals(expected, actual);
 
     }
+
     @Test
     void Volume9() {
         Radio radio = new Radio();
@@ -242,6 +246,7 @@ public class StatisticServiceTest {
         Assertions.assertEquals(expected, actual);
 
     }
+
     @Test
     void Volume7() {
         Radio radio = new Radio();
