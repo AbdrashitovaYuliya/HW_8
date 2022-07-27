@@ -5,6 +5,37 @@ import org.junit.jupiter.api.Test;
 
 public class StatisticServiceTest {
 
+
+    @Test
+    public void HaveAmountRadiostation() {
+       Radio radio = new Radio(5);
+       Assertions.assertEquals(5, radio.getAmountRadiostation());
+
+    }
+
+    @Test
+    public void HaveNotAmountRadiostation() {
+        Radio radio = new Radio();
+        Assertions.assertEquals(10, radio.getAmountRadiostation());
+
+    }
+
+
+    @Test
+    public void shouldMinRadiostation() {
+        Radio radio = new Radio();
+        Assertions.assertEquals(0, radio.getMinRadiostation());
+    }
+
+
+    @Test
+    public void maxRadiostation() {
+        Radio radio = new Radio();
+        radio.setMaxRadiostation(10);
+        Assertions.assertEquals(10, radio.getMaxRadiostation());
+    }
+
+
     @Test
     void switchNumberRadioStation() {
         Radio radio = new Radio();
@@ -30,9 +61,9 @@ public class StatisticServiceTest {
     }
 
     @Test
-    void switchNumberRadioStation10() {
+    void moreThanMaxRadioStation() {
         Radio radio = new Radio();
-        radio.setCurrentRadioStation(10);
+        radio.setCurrentRadioStation(11);
 
         int actual = radio.getCurrentRadioStation();
         int expected = 0;
@@ -72,7 +103,7 @@ public class StatisticServiceTest {
     @Test
     void numberRadioStationMax() {
         Radio radio = new Radio();
-        radio.setCurrentRadioStation(9);
+        radio.setCurrentRadioStation(10);
 
         radio.nextRadiostation();
 
@@ -81,6 +112,7 @@ public class StatisticServiceTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
 
     @Test
     void numberRadioStationDegreesMax() {
@@ -133,7 +165,7 @@ public class StatisticServiceTest {
         radio.prevRadiostation();
 
         int actual = radio.getCurrentRadioStation();
-        int expected = 9;
+        int expected = 10;
 
         Assertions.assertEquals(expected, actual);
 
@@ -153,7 +185,7 @@ public class StatisticServiceTest {
     }
 
     @Test
-    void switchSoundVolumeDegrees0() {
+    void lessThanMinSoundVolume() {
         Radio radio = new Radio();
         radio.setCurrentVolume(-1);
 
@@ -165,9 +197,9 @@ public class StatisticServiceTest {
     }
 
     @Test
-    void switchSoundVolume11() {
+    void moreThanMaxSoundVolume() {
         Radio radio = new Radio();
-        radio.setCurrentVolume(11);
+        radio.setCurrentVolume(101);
 
         int actual = radio.getCurrentVolume();
         int expected = 0;
@@ -194,12 +226,12 @@ public class StatisticServiceTest {
     @Test
     void maxVolume() {
         Radio radio = new Radio();
-        radio.setCurrentVolume(10);
+        radio.setCurrentVolume(100);
 
         radio.plusButton();
 
         int actual = radio.getCurrentVolume();
-        int expected = 10;
+        int expected = 100;
 
         Assertions.assertEquals(expected, actual);
 
